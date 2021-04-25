@@ -12,6 +12,7 @@ namespace SnippedGenerator
 {
     public partial class Form1 : Form
     {
+        public const string SnippedTemplatePath = @"..\..\..\Snippet_template.txt";
         public Form1()
         {
             InitializeComponent();

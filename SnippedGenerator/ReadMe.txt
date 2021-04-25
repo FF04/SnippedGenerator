@@ -4,12 +4,20 @@ Snippet generator
 
 
 
-Input:	Shortcut
-		Shortcut Description	
-		Code
-		Extras
+Idee von http://tools.unitycoder.com/VisualStudioSnippetsGenerator/
+Wieso baue ich dann soetwas?
+	Weil snippets noch weitere Funktionen haben können welche auf der Website nicht vorhanden sind, diese werde ich hier benutzen
+	(zB.: vorgegebenen type)
 
-Output: a .snipped file
+
+
+	Input:	Shortcut
+			Shortcut Description	
+			Code
+			Extras
+	
+	Output: a .snipped file
+	
 
 
 The Snipped Template is in Snippet_template.txt
