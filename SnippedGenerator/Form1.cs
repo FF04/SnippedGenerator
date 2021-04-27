@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,15 +35,15 @@ namespace SnippedGenerator
             TypeUI[3] = label4;
             TypeUI[4] = textBox_typeToolTip;
 
-            EnableTypeUI(false);
+            VisibleTypeUI(false);
 
         }
 
-        public void EnableTypeUI(bool state)
+        public void VisibleTypeUI(bool state)
         {
             foreach (var item in TypeUI)
             {
-                item.Enabled = state;
+                item.Visible = state;
             }
         }
 
@@ -64,11 +65,13 @@ namespace SnippedGenerator
 
             currentLastItem++;
             types.Add(new Types());
-            types.Last().Name = $"$type{currentLastItem}$"; 
+            types.Last().Name = $"$type{currentLastItem}$";
             comboBox_types.Items.Add(types.Last().Name);
-            currentSelectedItem = currentLastItem;
+            currentSelectedItem = currentLastItem-1;
+            comboBox_types.SelectedIndex = currentLastItem-1;
 
-            EnableTypeUI(true);
+
+            VisibleTypeUI(true);
         }
 
         private void textBox_defaultValue_TextChanged(object sender, EventArgs e)
@@ -84,13 +87,18 @@ namespace SnippedGenerator
 
         private void comboBox_types_SelectedIndexChanged(object sender, EventArgs e)
         {
+            currentSelectedItem = comboBox_types.SelectedIndex;
+            textBox_defaultValue.Text = types[currentSelectedItem].DefaultValue;
+            textBox_typeToolTip.Text = types[currentSelectedItem].Tooltip;
+
+
 
         }
     }
 
     public class Types
     {
-  
+
         public string Name { get; set; }
         public string DefaultValue { get; set; }
         public string Tooltip { get; set; }
