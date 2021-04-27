@@ -106,6 +106,8 @@ namespace SnippedGenerator
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox1.Size = new System.Drawing.Size(1003, 239);
             this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // panel1
             // 
