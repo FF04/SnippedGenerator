@@ -25,7 +25,7 @@ namespace SnippedGenerator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            TypeUI = new Control[5]; // 5 bc 5 objects
+            TypeUI = new Control[6]; // 5 bc 5 objects
             types = new List<Types>();
 
 
@@ -34,6 +34,7 @@ namespace SnippedGenerator
             TypeUI[2] = label5;
             TypeUI[3] = label4;
             TypeUI[4] = textBox_typeToolTip;
+            TypeUI[5] = button_inserttype;
 
             VisibleTypeUI(false);
 
@@ -58,8 +59,8 @@ namespace SnippedGenerator
 
         }
 
-        public int currentLastItem = 0;
-        public int currentSelectedItem = 0;
+        public int currentLastItem = 0; // type index des letzten/neuesten hinzugefügten types
+        public int currentSelectedItem = 0; // type Index welches gerade selected ist
         private void AddType_Button_Click(object sender, EventArgs e)
         {
 
@@ -111,7 +112,20 @@ namespace SnippedGenerator
             currentCursorCodePosition = textBox1.SelectionStart;
  
         }
+
+        private void button_inserttype_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = textBox1.Text.Insert(currentCursorCodePosition, types[currentSelectedItem].Name);
+
+        }
+
+
+
+#warning todo: einen extra button machen das der derzeit ausgewählte typoe in den code eingefügt wird und die code textbox umbenennen
     }
+
+
+
 
     public class Types
     {

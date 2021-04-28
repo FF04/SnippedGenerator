@@ -42,6 +42,7 @@ namespace SnippedGenerator
             this.label5 = new System.Windows.Forms.Label();
             this.textBox_typeToolTip = new System.Windows.Forms.TextBox();
             this.textBox_defaultValue = new System.Windows.Forms.TextBox();
+            this.button_inserttype = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -181,11 +182,22 @@ namespace SnippedGenerator
             this.textBox_defaultValue.TabIndex = 12;
             this.textBox_defaultValue.TextChanged += new System.EventHandler(this.textBox_defaultValue_TextChanged);
             // 
+            // button_inserttype
+            // 
+            this.button_inserttype.Location = new System.Drawing.Point(569, 169);
+            this.button_inserttype.Name = "button_inserttype";
+            this.button_inserttype.Size = new System.Drawing.Size(105, 52);
+            this.button_inserttype.TabIndex = 13;
+            this.button_inserttype.Text = "Insert at last cursor position";
+            this.button_inserttype.UseVisualStyleBackColor = true;
+            this.button_inserttype.Click += new System.EventHandler(this.button_inserttype_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 726);
+            this.Controls.Add(this.button_inserttype);
             this.Controls.Add(this.textBox_defaultValue);
             this.Controls.Add(this.textBox_typeToolTip);
             this.Controls.Add(this.label5);
@@ -222,6 +234,7 @@ namespace SnippedGenerator
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox_typeToolTip;
         private System.Windows.Forms.TextBox textBox_defaultValue;
+        private System.Windows.Forms.Button button_inserttype;
     }
 }
 
