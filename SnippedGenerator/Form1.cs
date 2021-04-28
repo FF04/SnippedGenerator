@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,17 +15,14 @@ namespace SnippedGenerator
     public partial class Form1 : Form
     {
         public const string SnippedTemplatePath = @"..\..\..\Snippet_template.txt";
+        public string snippedTemplate;
+
         public Form1()
         {
             InitializeComponent();
-        }
 
-        // um die TypeUI zu kontrollieren, wenn es beispielsweiße noch keine types gibt, sollen auch noch keine textfelder angezeigt werden
-        public Control[] TypeUI;
-        public List<Types> types;
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+
             TypeUI = new Control[6]; // 5 bc 5 objects
             types = new List<Types>();
 
@@ -37,6 +35,21 @@ namespace SnippedGenerator
             TypeUI[5] = button_inserttype;
 
             VisibleTypeUI(false);
+
+
+            snippedTemplate = File.ReadAllText(SnippedTemplatePath);
+
+
+
+        }
+
+        // um die TypeUI zu kontrollieren, wenn es beispielsweiße noch keine types gibt, sollen auch noch keine textfelder angezeigt werden
+        public Control[] TypeUI;
+        public List<Types> types;
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
 
         }
 
@@ -119,9 +132,57 @@ namespace SnippedGenerator
 
         }
 
+        private void button_Generate_Click(object sender, EventArgs e)
+        {
+          
 
 
-#warning todo: einen extra button machen das der derzeit ausgewählte typoe in den code eingefügt wird und die code textbox umbenennen
+
+            // all types hier extra einfügen
+
+
+
+            if (textBox_Shortcut.Text == null || (textBox_Shortcut.Text.Length<1))
+            {
+                MessageBox.Show("Shortcut is empty");
+                return;
+            }
+            if (textBox_Code.Text == null || (textBox_Code.Text.Length<1))
+            {
+                MessageBox.Show("Code is empty");
+                return;
+            }
+
+
+            string shortCut = textBox_Shortcut.Text;
+            string code = textBox_Code.Text;
+            string Description = textBox_Description.Text ?? "";
+
+
+            string savePath = $@"C:\Users\{Environment.UserName}\Downloads\{shortCut}.snipped";
+
+
+            // *1*  Title & Shortcut
+            // *2* Description
+            // *3* Code
+            snippedTemplate.Replace("*1*",shortCut);
+            snippedTemplate.Replace("*2*",textBox_Description.Text);
+            snippedTemplate.Replace("*3*",code);
+
+
+
+
+
+
+
+            File.WriteAllText(savePath,snippedTemplate);
+
+            Process.Start("explorer.exe", $@"C:\Users\{Environment.UserName}\Downloads"); // öffnen des ordners
+
+        }
+
+
+
     }
 
 

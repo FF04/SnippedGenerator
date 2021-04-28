@@ -5,13 +5,13 @@
       <Title>*1*</Title>
       <Shortcut>*1*</Shortcut>
       <Description>*2*</Description>
-      <Author>*3*</Author>
+      <Author>Snipped Generator - FF</Author>
     </Header>
     <Snippet>
       <Declarations>
         <Literal Editable="false"></Literal>
       </Declarations>
-      <Code Language="csharp"><![CDATA[*4*]]></Code>
+      <Code Language="csharp"><![CDATA[*3*]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>

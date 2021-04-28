@@ -29,6 +29,7 @@ namespace SnippedGenerator
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@ namespace SnippedGenerator
             this.textBox_typeToolTip = new System.Windows.Forms.TextBox();
             this.textBox_defaultValue = new System.Windows.Forms.TextBox();
             this.button_inserttype = new System.Windows.Forms.Button();
+            this.button_Generate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -162,7 +164,7 @@ namespace SnippedGenerator
             // textBox_typeToolTip
             // 
             this.textBox_typeToolTip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_typeToolTip.Location = new System.Drawing.Point(758, 180);
+            this.textBox_typeToolTip.Location = new System.Drawing.Point(801, 180);
             this.textBox_typeToolTip.Multiline = true;
             this.textBox_typeToolTip.Name = "textBox_typeToolTip";
             this.textBox_typeToolTip.PlaceholderText = "Any variable";
@@ -192,11 +194,27 @@ namespace SnippedGenerator
             this.button_inserttype.UseVisualStyleBackColor = true;
             this.button_inserttype.Click += new System.EventHandler(this.button_inserttype_Click);
             // 
+            // button_Generate
+            // 
+            this.button_Generate.BackColor = System.Drawing.SystemColors.Control;
+            this.button_Generate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Generate.BackgroundImage")));
+            this.button_Generate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Generate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Generate.Image = ((System.Drawing.Image)(resources.GetObject("button_Generate.Image")));
+            this.button_Generate.Location = new System.Drawing.Point(41, 571);
+            this.button_Generate.Name = "button_Generate";
+            this.button_Generate.Size = new System.Drawing.Size(165, 62);
+            this.button_Generate.TabIndex = 14;
+            this.button_Generate.Text = "Generate Snipped";
+            this.button_Generate.UseVisualStyleBackColor = false;
+            this.button_Generate.Click += new System.EventHandler(this.button_Generate_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 726);
+            this.Controls.Add(this.button_Generate);
             this.Controls.Add(this.button_inserttype);
             this.Controls.Add(this.textBox_defaultValue);
             this.Controls.Add(this.textBox_typeToolTip);
@@ -235,6 +253,7 @@ namespace SnippedGenerator
         private System.Windows.Forms.TextBox textBox_typeToolTip;
         private System.Windows.Forms.TextBox textBox_defaultValue;
         private System.Windows.Forms.Button button_inserttype;
+        private System.Windows.Forms.Button button_Generate;
     }
 }
 
