@@ -34,7 +34,7 @@ namespace SnippedGenerator
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_Shortcut = new System.Windows.Forms.TextBox();
             this.textBox_Description = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_Code = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AddType_Button = new System.Windows.Forms.Button();
             this.comboBox_types = new System.Windows.Forms.ComboBox();
@@ -97,18 +97,18 @@ namespace SnippedGenerator
             this.textBox_Description.TabIndex = 4;
             this.textBox_Description.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox1
+            // textBox_Code
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(41, 272);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Console.ReadLine();";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(1003, 239);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.textBox_Code.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox_Code.Location = new System.Drawing.Point(41, 272);
+            this.textBox_Code.Multiline = true;
+            this.textBox_Code.Name = "textBox_Code";
+            this.textBox_Code.PlaceholderText = "Console.ReadLine();";
+            this.textBox_Code.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox_Code.Size = new System.Drawing.Size(1003, 239);
+            this.textBox_Code.TabIndex = 5;
+            this.textBox_Code.TextChanged += new System.EventHandler(this.textBox_Code_TextChanged);
+            this.textBox_Code.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // panel1
             // 
@@ -205,7 +205,7 @@ namespace SnippedGenerator
             this.Controls.Add(this.comboBox_types);
             this.Controls.Add(this.AddType_Button);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_Code);
             this.Controls.Add(this.textBox_Description);
             this.Controls.Add(this.textBox_Shortcut);
             this.Controls.Add(this.label3);
@@ -226,7 +226,7 @@ namespace SnippedGenerator
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_Shortcut;
         private System.Windows.Forms.TextBox textBox_Description;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_Code;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button AddType_Button;
         private System.Windows.Forms.ComboBox comboBox_types;

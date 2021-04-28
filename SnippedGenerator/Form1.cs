@@ -71,7 +71,7 @@ namespace SnippedGenerator
             currentSelectedItem = currentLastItem-1;
             comboBox_types.SelectedIndex = currentLastItem-1;
 
-            textBox1.Text = textBox1.Text.Insert(currentCursorCodePosition, types.Last().Name);
+            textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition, types.Last().Name);
 
             VisibleTypeUI(true);
         }
@@ -98,7 +98,7 @@ namespace SnippedGenerator
 
       
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        private void textBox_Code_TextChanged(object sender, EventArgs e)
         {
 
          
@@ -109,13 +109,13 @@ namespace SnippedGenerator
         private void textBox1_Leave(object sender, EventArgs e)
         {
             // jedes mal wenn man etwas anderes macht (also aus der Textbox heraus geht) wird die cursor pos gespeichert, um später möglicherweise an der Stelle etwas einzufügen
-            currentCursorCodePosition = textBox1.SelectionStart;
+            currentCursorCodePosition = textBox_Code.SelectionStart;
  
         }
 
         private void button_inserttype_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text.Insert(currentCursorCodePosition, types[currentSelectedItem].Name);
+            textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition, types[currentSelectedItem].Name);
 
         }
 
