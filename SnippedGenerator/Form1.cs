@@ -41,6 +41,15 @@ namespace SnippedGenerator
 
 
 
+
+
+
+
+
+
+
+
+
         }
 
         // um die TypeUI zu kontrollieren, wenn es beispielsweiße noch keine types gibt, sollen auch noch keine textfelder angezeigt werden
@@ -200,10 +209,24 @@ namespace SnippedGenerator
 
             Process.Start("explorer.exe", $@"C:\Users\{Environment.UserName}\Downloads"); // öffnen des ordners
 
+
+
+
+
+
         }
 
+        private void button_AddEnd_Click(object sender, EventArgs e)
+        {
+            textBox_Code.Text = textBox_Code.Text.Replace("$end$",""); // es soll immer nur ein $end$ geben
+            textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition,"$end$");
+        }
 
-
+        private void button_AddSelection_Click(object sender, EventArgs e)
+        {
+            textBox_Code.Text = textBox_Code.Text.Replace("$selected$", ""); // es soll immer nur ein $selected$ geben
+            textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition, "$selected$");
+        }
     }
 
 

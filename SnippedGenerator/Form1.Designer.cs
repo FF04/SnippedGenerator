@@ -29,6 +29,7 @@ namespace SnippedGenerator
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +46,9 @@ namespace SnippedGenerator
             this.textBox_defaultValue = new System.Windows.Forms.TextBox();
             this.button_inserttype = new System.Windows.Forms.Button();
             this.button_Generate = new System.Windows.Forms.Button();
+            this.button_AddEnd = new System.Windows.Forms.Button();
+            this.button_AddSelection = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -199,21 +203,54 @@ namespace SnippedGenerator
             this.button_Generate.BackColor = System.Drawing.SystemColors.Control;
             this.button_Generate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Generate.BackgroundImage")));
             this.button_Generate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Generate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Generate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_Generate.Image = ((System.Drawing.Image)(resources.GetObject("button_Generate.Image")));
-            this.button_Generate.Location = new System.Drawing.Point(41, 571);
+            this.button_Generate.Location = new System.Drawing.Point(423, 621);
             this.button_Generate.Name = "button_Generate";
-            this.button_Generate.Size = new System.Drawing.Size(165, 62);
+            this.button_Generate.Size = new System.Drawing.Size(238, 83);
             this.button_Generate.TabIndex = 14;
             this.button_Generate.Text = "Generate Snipped";
             this.button_Generate.UseVisualStyleBackColor = false;
             this.button_Generate.Click += new System.EventHandler(this.button_Generate_Click);
+            // 
+            // button_AddEnd
+            // 
+            this.button_AddEnd.Location = new System.Drawing.Point(844, 517);
+            this.button_AddEnd.Name = "button_AddEnd";
+            this.button_AddEnd.Size = new System.Drawing.Size(200, 64);
+            this.button_AddEnd.TabIndex = 15;
+            this.button_AddEnd.Text = "Add end";
+            this.toolTip1.SetToolTip(this.button_AddEnd, "This button is optional.\r\nThis is the position where the cursor will be after ins" +
+        "erting the snipped. \r\nThis element ist only one time allowed in the code!\r\n(If n" +
+        "ot added it will be att the end)");
+            this.button_AddEnd.UseVisualStyleBackColor = true;
+            this.button_AddEnd.Click += new System.EventHandler(this.button_AddEnd_Click);
+            // 
+            // button_AddSelection
+            // 
+            this.button_AddSelection.Location = new System.Drawing.Point(41, 517);
+            this.button_AddSelection.Name = "button_AddSelection";
+            this.button_AddSelection.Size = new System.Drawing.Size(200, 64);
+            this.button_AddSelection.TabIndex = 16;
+            this.button_AddSelection.Text = "Selection";
+            this.toolTip1.SetToolTip(this.button_AddSelection, "This Button is optional.\r\nIf you add \"selection\" the code will sourrond the selec" +
+        "ted Code.\r\n(The selected code will be replaced by the \"selection\")\r\nThis element" +
+        " ist only one time allowed in the code!");
+            this.button_AddSelection.UseVisualStyleBackColor = true;
+            this.button_AddSelection.Click += new System.EventHandler(this.button_AddSelection_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 100;
+            this.toolTip1.ToolTipTitle = "Hint";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 726);
+            this.Controls.Add(this.button_AddSelection);
+            this.Controls.Add(this.button_AddEnd);
             this.Controls.Add(this.button_Generate);
             this.Controls.Add(this.button_inserttype);
             this.Controls.Add(this.textBox_defaultValue);
@@ -230,7 +267,7 @@ namespace SnippedGenerator
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Snipped Generator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -254,6 +291,9 @@ namespace SnippedGenerator
         private System.Windows.Forms.TextBox textBox_defaultValue;
         private System.Windows.Forms.Button button_inserttype;
         private System.Windows.Forms.Button button_Generate;
+        private System.Windows.Forms.Button button_AddEnd;
+        private System.Windows.Forms.Button button_AddSelection;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

@@ -2,7 +2,7 @@
 =================
 Snippet generator
 
-
+Infos dazu: https://docs.microsoft.com/en-us/visualstudio/ide/code-snippets-schema-reference?view=vs-2019
 
 Idee von http://tools.unitycoder.com/VisualStudioSnippetsGenerator/
 Wieso baue ich dann soetwas?
@@ -32,3 +32,17 @@ Literal *3*
 					<Default>XXX</Default>
 				</Literal>
 
+
+
+				28.4.2021 FERTIG mit dem prinzip
+			
+			
+
+							
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+
+			Diese beiden elemente sollten nur einmal im Code vorkommen, falls sie häufiger vorkommen zählt nur das letzte
+				  $selected$ $end$
