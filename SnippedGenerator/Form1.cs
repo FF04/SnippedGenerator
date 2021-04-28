@@ -180,21 +180,20 @@ namespace SnippedGenerator
                 code += "$end$";
             }
 
-
             // *1*  Title & Shortcut
             // *2* Description
             // *3* <literal>  (nur die types nehmen welche auch im code vorkommen)
             // *4* Code
-            snippedTemplate.Replace("*1*", shortCut);
-            snippedTemplate.Replace("*2*", textBox_Description.Text);
-            snippedTemplate.Replace("*3*", typesLiteral);
-            snippedTemplate.Replace("*4*", code);
+            snippedTemplate = snippedTemplate.Replace("*1*", shortCut);
+            snippedTemplate = snippedTemplate.Replace("*2*", textBox_Description.Text);
+            snippedTemplate = snippedTemplate.Replace("*3*", typesLiteral);
+            snippedTemplate = snippedTemplate.Replace("*4*", code);
 
 
 
 
 
-            string savePath = $@"C:\Users\{Environment.UserName}\Downloads\{shortCut}.snipped";
+            string savePath = $@"C:\Users\{Environment.UserName}\Downloads\{shortCut}.snippet";
 
 
             File.WriteAllText(savePath, snippedTemplate);
