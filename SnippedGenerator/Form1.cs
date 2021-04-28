@@ -49,7 +49,7 @@ namespace SnippedGenerator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+
 
         }
 
@@ -81,8 +81,8 @@ namespace SnippedGenerator
             types.Add(new Types());
             types.Last().Name = $"$type{currentLastItem}$";
             comboBox_types.Items.Add(types.Last().Name);
-            currentSelectedItem = currentLastItem-1;
-            comboBox_types.SelectedIndex = currentLastItem-1;
+            currentSelectedItem = currentLastItem - 1;
+            comboBox_types.SelectedIndex = currentLastItem - 1;
 
             textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition, types.Last().Name);
 
@@ -109,21 +109,21 @@ namespace SnippedGenerator
 
         }
 
-      
+
 
         private void textBox_Code_TextChanged(object sender, EventArgs e)
         {
 
-         
+
         }
 
 
-        public int currentCursorCodePosition=0;
+        public int currentCursorCodePosition = 0;
         private void textBox1_Leave(object sender, EventArgs e)
         {
             // jedes mal wenn man etwas anderes macht (also aus der Textbox heraus geht) wird die cursor pos gespeichert, um später möglicherweise an der Stelle etwas einzufügen
             currentCursorCodePosition = textBox_Code.SelectionStart;
- 
+
         }
 
         private void button_inserttype_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace SnippedGenerator
 
         private void button_Generate_Click(object sender, EventArgs e)
         {
-          
+
 
 
 
@@ -142,12 +142,12 @@ namespace SnippedGenerator
 
 
 
-            if (textBox_Shortcut.Text == null || (textBox_Shortcut.Text.Length<1))
+            if (textBox_Shortcut.Text == null || (textBox_Shortcut.Text.Length < 1))
             {
                 MessageBox.Show("Shortcut is empty");
                 return;
             }
-            if (textBox_Code.Text == null || (textBox_Code.Text.Length<1))
+            if (textBox_Code.Text == null || (textBox_Code.Text.Length < 1))
             {
                 MessageBox.Show("Code is empty");
                 return;
@@ -158,24 +158,46 @@ namespace SnippedGenerator
             string code = textBox_Code.Text;
             string Description = textBox_Description.Text ?? "";
 
+            string typesLiteral = "";
+            foreach (var item in types)
+            {
+                if (!code.Contains(item.Name)) // nur wenn der type im code enthalten ist soll auch die jeweilige beschreibung hinzugefügt werden
+                    continue;
 
-            string savePath = $@"C:\Users\{Environment.UserName}\Downloads\{shortCut}.snipped";
+                //das ist mit absicht so verschoben
+                typesLiteral += $@"				<Literal>
+					<ID>{item.Name.Replace("$", "")}</ID>
+					<ToolTip>{item.Tooltip}</ToolTip>
+					<Default>{item.DefaultValue}</Default>
+				</Literal>
+";
+            }
+
+
+
+            if (!code.Contains("$end$")) // $end$ ist immer dort wo der cursor nach dem das snipped eingefügt wurde steht
+            {
+                code += "$end$";
+            }
 
 
             // *1*  Title & Shortcut
             // *2* Description
-            // *3* Code
-            snippedTemplate.Replace("*1*",shortCut);
-            snippedTemplate.Replace("*2*",textBox_Description.Text);
-            snippedTemplate.Replace("*3*",code);
+            // *3* <literal>  (nur die types nehmen welche auch im code vorkommen)
+            // *4* Code
+            snippedTemplate.Replace("*1*", shortCut);
+            snippedTemplate.Replace("*2*", textBox_Description.Text);
+            snippedTemplate.Replace("*3*", typesLiteral);
+            snippedTemplate.Replace("*4*", code);
 
 
 
 
 
+            string savePath = $@"C:\Users\{Environment.UserName}\Downloads\{shortCut}.snipped";
 
 
-            File.WriteAllText(savePath,snippedTemplate);
+            File.WriteAllText(savePath, snippedTemplate);
 
             Process.Start("explorer.exe", $@"C:\Users\{Environment.UserName}\Downloads"); // öffnen des ordners
 

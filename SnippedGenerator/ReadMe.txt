@@ -24,3 +24,11 @@ The Snipped Template is in Snippet_template.txt
 to replace are all *number* (*1*, *2*, ...)
 
 
+
+Literal *3*
+				<Literal>
+					<ID>typeX</ID>
+					<ToolTip>XXX</ToolTip>
+					<Default>XXX</Default>
+				</Literal>
+

@@ -10,8 +10,9 @@
     <Snippet>
       <Declarations>
         <Literal Editable="false"></Literal>
+        *3*
       </Declarations>
-      <Code Language="csharp"><![CDATA[*3*]]></Code>
+      <Code Language="csharp"><![CDATA[*4*]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>
