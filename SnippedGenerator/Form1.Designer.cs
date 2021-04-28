@@ -50,9 +50,6 @@ namespace SnippedGenerator
             this.button_AddSelection = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button_settings = new System.Windows.Forms.Button();
-            this.comboBox_kinds = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -264,43 +261,11 @@ namespace SnippedGenerator
             this.button_settings.UseVisualStyleBackColor = true;
             this.button_settings.Click += new System.EventHandler(this.button_settings_Click);
             // 
-            // comboBox_kinds
-            // 
-            this.comboBox_kinds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_kinds.FormattingEnabled = true;
-            this.comboBox_kinds.Location = new System.Drawing.Point(1071, 56);
-            this.comboBox_kinds.Name = "comboBox_kinds";
-            this.comboBox_kinds.Size = new System.Drawing.Size(121, 23);
-            this.comboBox_kinds.TabIndex = 18;
-            this.comboBox_kinds.SelectedIndexChanged += new System.EventHandler(this.comboBox_kinds_SelectedIndexChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(1004, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2, 264);
-            this.panel2.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(1071, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 21);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Kind of snippet";
-            this.toolTip1.SetToolTip(this.label6, "Optional attribute that specifies the kind of code that the snippet contains.");
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1267, 617);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.comboBox_kinds);
             this.Controls.Add(this.button_settings);
             this.Controls.Add(this.button_AddSelection);
             this.Controls.Add(this.button_AddEnd);
@@ -348,9 +313,6 @@ namespace SnippedGenerator
         private System.Windows.Forms.Button button_AddSelection;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button_settings;
-        private System.Windows.Forms.ComboBox comboBox_kinds;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label6;
     }
 }
 
