@@ -49,6 +49,10 @@ namespace SnippedGenerator
             this.button_AddEnd = new System.Windows.Forms.Button();
             this.button_AddSelection = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button_settings = new System.Windows.Forms.Button();
+            this.comboBox_kinds = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -105,13 +109,13 @@ namespace SnippedGenerator
             // 
             // textBox_Code
             // 
-            this.textBox_Code.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_Code.Location = new System.Drawing.Point(41, 272);
+            this.textBox_Code.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox_Code.Location = new System.Drawing.Point(27, 272);
             this.textBox_Code.Multiline = true;
             this.textBox_Code.Name = "textBox_Code";
             this.textBox_Code.PlaceholderText = "Console.ReadLine();";
             this.textBox_Code.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox_Code.Size = new System.Drawing.Size(1003, 239);
+            this.textBox_Code.Size = new System.Drawing.Size(1003, 316);
             this.textBox_Code.TabIndex = 5;
             this.textBox_Code.TextChanged += new System.EventHandler(this.textBox_Code_TextChanged);
             this.textBox_Code.Leave += new System.EventHandler(this.textBox1_Leave);
@@ -168,7 +172,7 @@ namespace SnippedGenerator
             // textBox_typeToolTip
             // 
             this.textBox_typeToolTip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_typeToolTip.Location = new System.Drawing.Point(801, 180);
+            this.textBox_typeToolTip.Location = new System.Drawing.Point(758, 180);
             this.textBox_typeToolTip.Multiline = true;
             this.textBox_typeToolTip.Name = "textBox_typeToolTip";
             this.textBox_typeToolTip.PlaceholderText = "Any variable";
@@ -205,9 +209,9 @@ namespace SnippedGenerator
             this.button_Generate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Generate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_Generate.Image = ((System.Drawing.Image)(resources.GetObject("button_Generate.Image")));
-            this.button_Generate.Location = new System.Drawing.Point(423, 621);
+            this.button_Generate.Location = new System.Drawing.Point(1036, 519);
             this.button_Generate.Name = "button_Generate";
-            this.button_Generate.Size = new System.Drawing.Size(238, 83);
+            this.button_Generate.Size = new System.Drawing.Size(200, 69);
             this.button_Generate.TabIndex = 14;
             this.button_Generate.Text = "Generate Snipped";
             this.button_Generate.UseVisualStyleBackColor = false;
@@ -215,7 +219,8 @@ namespace SnippedGenerator
             // 
             // button_AddEnd
             // 
-            this.button_AddEnd.Location = new System.Drawing.Point(844, 517);
+            this.button_AddEnd.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_AddEnd.Location = new System.Drawing.Point(1036, 272);
             this.button_AddEnd.Name = "button_AddEnd";
             this.button_AddEnd.Size = new System.Drawing.Size(200, 64);
             this.button_AddEnd.TabIndex = 15;
@@ -228,11 +233,12 @@ namespace SnippedGenerator
             // 
             // button_AddSelection
             // 
-            this.button_AddSelection.Location = new System.Drawing.Point(41, 517);
+            this.button_AddSelection.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_AddSelection.Location = new System.Drawing.Point(1036, 342);
             this.button_AddSelection.Name = "button_AddSelection";
             this.button_AddSelection.Size = new System.Drawing.Size(200, 64);
             this.button_AddSelection.TabIndex = 16;
-            this.button_AddSelection.Text = "Selection";
+            this.button_AddSelection.Text = "Add selection";
             this.toolTip1.SetToolTip(this.button_AddSelection, "This Button is optional.\r\nIf you add \"selection\" the code will sourrond the selec" +
         "ted Code.\r\n(The selected code will be replaced by the \"selection\")\r\nThis element" +
         " ist only one time allowed in the code!");
@@ -244,11 +250,58 @@ namespace SnippedGenerator
             this.toolTip1.AutomaticDelay = 100;
             this.toolTip1.ToolTipTitle = "Hint";
             // 
+            // button_settings
+            // 
+            this.button_settings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_settings.Location = new System.Drawing.Point(1036, 421);
+            this.button_settings.Name = "button_settings";
+            this.button_settings.Size = new System.Drawing.Size(200, 64);
+            this.button_settings.TabIndex = 17;
+            this.button_settings.Text = "Settings";
+            this.toolTip1.SetToolTip(this.button_settings, "This Button is optional.\r\nIf you add \"selection\" the code will sourrond the selec" +
+        "ted Code.\r\n(The selected code will be replaced by the \"selection\")\r\nThis element" +
+        " ist only one time allowed in the code!");
+            this.button_settings.UseVisualStyleBackColor = true;
+            this.button_settings.Click += new System.EventHandler(this.button_settings_Click);
+            // 
+            // comboBox_kinds
+            // 
+            this.comboBox_kinds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_kinds.FormattingEnabled = true;
+            this.comboBox_kinds.Location = new System.Drawing.Point(1071, 56);
+            this.comboBox_kinds.Name = "comboBox_kinds";
+            this.comboBox_kinds.Size = new System.Drawing.Size(121, 23);
+            this.comboBox_kinds.TabIndex = 18;
+            this.comboBox_kinds.SelectedIndexChanged += new System.EventHandler(this.comboBox_kinds_SelectedIndexChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(1004, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(2, 264);
+            this.panel2.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(1071, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 21);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Kind of snippet";
+            this.toolTip1.SetToolTip(this.label6, "Optional attribute that specifies the kind of code that the snippet contains.");
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1221, 726);
+            this.ClientSize = new System.Drawing.Size(1267, 617);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.comboBox_kinds);
+            this.Controls.Add(this.button_settings);
             this.Controls.Add(this.button_AddSelection);
             this.Controls.Add(this.button_AddEnd);
             this.Controls.Add(this.button_Generate);
@@ -294,6 +347,10 @@ namespace SnippedGenerator
         private System.Windows.Forms.Button button_AddEnd;
         private System.Windows.Forms.Button button_AddSelection;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button_settings;
+        private System.Windows.Forms.ComboBox comboBox_kinds;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label6;
     }
 }
 

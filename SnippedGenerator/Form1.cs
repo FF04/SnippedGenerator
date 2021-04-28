@@ -12,6 +12,8 @@ using System.Windows.Forms;
 
 namespace SnippedGenerator
 {
+
+    
     public partial class Form1 : Form
     {
         public const string SnippedTemplatePath = @"..\..\..\Snippet_template.txt";
@@ -227,10 +229,27 @@ namespace SnippedGenerator
             textBox_Code.Text = textBox_Code.Text.Replace("$selected$", ""); // es soll immer nur ein $selected$ geben
             textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition, "$selected$");
         }
+
+
+        /// <summary>
+        /// This Button opens a settings menu
+        /// There it is possible to chnage toe author or Title (...)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_settings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_kinds_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
-
+    
 
     public class Types
     {
