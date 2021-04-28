@@ -234,6 +234,7 @@ namespace SnippedGenerator
         /// <summary>
         /// This Button opens a settings menu
         /// There it is possible to chnage toe author or Title (...)
+        /// Info: How to add snippets
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

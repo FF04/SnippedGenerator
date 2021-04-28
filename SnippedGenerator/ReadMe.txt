@@ -54,6 +54,14 @@ Literal *3*
 
 
 
+
+
+
+
+
+
+				  WHAT ARE KINDS DOING???
+
 				  Kind - Optional attribute that specifies the kind of code that the snippet contains. The value can be one of the following:
 
 TABLE 4
@@ -63,3 +71,7 @@ TABLE 4
 		type decl				Specifies that the code snippet is a type, and therefore, must be inserted inside a class, module, or namespace.
 		file					Specifies that the snippet is a full code file. These code snippets can be inserted alone into a code file, or inside a namespace.
 		any						Specifies that the snippet can be inserted anywhere. This tag is used for code snippets that are context-independent, such as comments.
+
+
+
+		das ist eine .NET Core solution -> zb keine MenuStrips

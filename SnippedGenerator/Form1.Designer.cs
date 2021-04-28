@@ -50,6 +50,7 @@ namespace SnippedGenerator
             this.button_AddSelection = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button_settings = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -254,18 +255,30 @@ namespace SnippedGenerator
             this.button_settings.Name = "button_settings";
             this.button_settings.Size = new System.Drawing.Size(200, 64);
             this.button_settings.TabIndex = 17;
-            this.button_settings.Text = "Settings";
+            this.button_settings.Text = "settings and infos";
             this.toolTip1.SetToolTip(this.button_settings, "This Button is optional.\r\nIf you add \"selection\" the code will sourrond the selec" +
         "ted Code.\r\n(The selected code will be replaced by the \"selection\")\r\nThis element" +
         " ist only one time allowed in the code!");
             this.button_settings.UseVisualStyleBackColor = true;
+            this.button_settings.Visible = false;
             this.button_settings.Click += new System.EventHandler(this.button_settings_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(12, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(19, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "FF";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1267, 617);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button_settings);
             this.Controls.Add(this.button_AddSelection);
             this.Controls.Add(this.button_AddEnd);
@@ -313,6 +326,7 @@ namespace SnippedGenerator
         private System.Windows.Forms.Button button_AddSelection;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button_settings;
+        private System.Windows.Forms.Label label6;
     }
 }
 
