@@ -19,11 +19,14 @@ namespace SnippedGenerator
         public const string SnippedTemplatePath = @"..\..\..\Snippet_template.txt";
         public string snippedTemplate;
 
+
+
+        public Settings settingsForm;
         public Form1()
         {
             InitializeComponent();
 
-
+            settingsForm = new Settings(this);
 
             TypeUI = new Control[6]; // 5 bc 5 objects
             types = new List<Types>();
@@ -166,8 +169,15 @@ namespace SnippedGenerator
 
 
             string shortCut = textBox_Shortcut.Text;
+            string Author = settingsForm.Author;
             string code = textBox_Code.Text;
             string Description = textBox_Description.Text ?? "";
+            string title = settingsForm.title;
+
+            if (title.Length < 1) // falls kein Titel extra zugewiesen wurde, ist der Titel = shortcut
+                title = shortCut;
+            
+
 
             string typesLiteral = "";
             foreach (var item in types)
@@ -191,14 +201,18 @@ namespace SnippedGenerator
                 code += "$end$";
             }
 
-            // *1*  Title & Shortcut
-            // *2* Description
-            // *3* <literal>  (nur die types nehmen welche auch im code vorkommen)
-            // *4* Code
+            // *1*  Shortcut
+            // *2* Title
+            // *3* Description
+            // *4* Author
+            // *5* <literal>  (nur die types nehmen welche auch im code vorkommen)
+            // *6* Code
             snippedTemplate = snippedTemplate.Replace("*1*", shortCut);
-            snippedTemplate = snippedTemplate.Replace("*2*", textBox_Description.Text);
-            snippedTemplate = snippedTemplate.Replace("*3*", typesLiteral);
-            snippedTemplate = snippedTemplate.Replace("*4*", code);
+            snippedTemplate = snippedTemplate.Replace("*1*", title);
+            snippedTemplate = snippedTemplate.Replace("*3*", textBox_Description.Text);
+            snippedTemplate = snippedTemplate.Replace("*4*", Author);
+            snippedTemplate = snippedTemplate.Replace("*5*", typesLiteral);
+            snippedTemplate = snippedTemplate.Replace("*6*", code);
 
 
 
@@ -240,7 +254,11 @@ namespace SnippedGenerator
         /// <param name="e"></param>
         private void button_settings_Click(object sender, EventArgs e)
         {
-
+            
+            settingsForm.Visible = true;
+            settingsForm.Reload();
+            if(settingsForm.title.Length<1) // wenn noch kein titel zugewiesen, wird der derzeitige shortcut genommen
+            settingsForm.title = textBox_Shortcut.Text;
         }
 
         private void comboBox_kinds_SelectedIndexChanged(object sender, EventArgs e)

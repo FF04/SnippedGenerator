@@ -3,16 +3,16 @@
   <CodeSnippet Format="1.0.0">
     <Header>
       <Title>*1*</Title>
-      <Shortcut>*1*</Shortcut>
-      <Description>*2*</Description>
-      <Author>Snipped Generator - FF</Author>
+      <Shortcut>*2*</Shortcut>
+      <Description>*3*</Description>
+      <Author>*4*</Author>
     </Header>
     <Snippet>
       <Declarations>
         <Literal Editable="false"></Literal>
-        *3*
+        *5*
       </Declarations>
-      <Code Language="csharp"><![CDATA[*4*]]></Code>
+      <Code Language="csharp"><![CDATA[*6*]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>
