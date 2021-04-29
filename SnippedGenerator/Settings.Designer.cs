@@ -64,7 +64,7 @@ namespace SnippedGenerator
             this.textBox_Author.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox_Author.Location = new System.Drawing.Point(12, 66);
             this.textBox_Author.Name = "textBox_Author";
-            this.textBox_Author.Size = new System.Drawing.Size(144, 27);
+            this.textBox_Author.Size = new System.Drawing.Size(270, 27);
             this.textBox_Author.TabIndex = 2;
             this.textBox_Author.TextChanged += new System.EventHandler(this.textBox_Author_TextChanged);
             // 
@@ -73,7 +73,7 @@ namespace SnippedGenerator
             this.textBox_title.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox_title.Location = new System.Drawing.Point(13, 138);
             this.textBox_title.Name = "textBox_title";
-            this.textBox_title.Size = new System.Drawing.Size(144, 27);
+            this.textBox_title.Size = new System.Drawing.Size(270, 27);
             this.textBox_title.TabIndex = 3;
             this.textBox_title.TextChanged += new System.EventHandler(this.textBox_title_TextChanged);
             // 
@@ -81,7 +81,7 @@ namespace SnippedGenerator
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(289, 42);
+            this.label3.Location = new System.Drawing.Point(409, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(166, 21);
             this.label3.TabIndex = 4;
@@ -90,7 +90,7 @@ namespace SnippedGenerator
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(198, 66);
+            this.label4.Location = new System.Drawing.Point(318, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(323, 320);
             this.label4.TabIndex = 5;
@@ -109,7 +109,7 @@ namespace SnippedGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 227);
+            this.ClientSize = new System.Drawing.Size(689, 227);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

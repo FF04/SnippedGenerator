@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -149,14 +150,30 @@ namespace SnippedGenerator
 
         private void button_AddEnd_Click(object sender, EventArgs e)
         {
-            textBox_Code.Text = textBox_Code.Text.Replace("$end$",""); // es soll immer nur ein $end$ geben
-            textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition,"$end$");
+            try
+            {
+                textBox_Code.Text = textBox_Code.Text.Replace("$end$", ""); // es soll immer nur ein $end$ geben
+                textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition, "$end$");
+            }
+            catch (Exception)
+            {
+
+           
+            }
         }
 
         private void button_AddSelection_Click(object sender, EventArgs e)
         {
-            textBox_Code.Text = textBox_Code.Text.Replace("$selected$", ""); // es soll immer nur ein $selected$ geben
-            textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition, "$selected$");
+            try
+            {
+                textBox_Code.Text = textBox_Code.Text.Replace("$selected$", ""); // es soll immer nur ein $selected$ geben
+                textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition, "$selected$");
+            }
+            catch (Exception)
+            {
+
+            
+            }
         }
 
 
@@ -234,15 +251,15 @@ namespace SnippedGenerator
                 code += "$end$";
             }
 
-            // *1*  Shortcut
-            // *2* Title
+            // *1*  Title
+            // *2* Shortcut
             // *3* Description
             // *4* Author
             // *5* <literal>  (nur die types nehmen welche auch im code vorkommen)
             // *6* Code
-            snippedTemplate = snippedTemplate.Replace("*1*", shortCut);
             snippedTemplate = snippedTemplate.Replace("*1*", title);
-            snippedTemplate = snippedTemplate.Replace("*3*", textBox_Description.Text);
+            snippedTemplate = snippedTemplate.Replace("*2*", shortCut);
+            snippedTemplate = snippedTemplate.Replace("*3*", Description);
             snippedTemplate = snippedTemplate.Replace("*4*", Author);
             snippedTemplate = snippedTemplate.Replace("*5*", typesLiteral);
             snippedTemplate = snippedTemplate.Replace("*6*", code);
