@@ -75,3 +75,27 @@ TABLE 4
 
 
 		das ist eine .NET Core solution -> zb keine MenuStrips
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Error: Couldn't process file resx due to its being in the Internet or Restricted zone or having the mark of the web on the file
+		Solved: Deleted ALL images in the forms
+
+
+
+
+
+
+
+

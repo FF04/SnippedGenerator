@@ -146,10 +146,43 @@ namespace SnippedGenerator
 
         }
 
-        private void button_Generate_Click(object sender, EventArgs e)
+
+        private void button_AddEnd_Click(object sender, EventArgs e)
+        {
+            textBox_Code.Text = textBox_Code.Text.Replace("$end$",""); // es soll immer nur ein $end$ geben
+            textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition,"$end$");
+        }
+
+        private void button_AddSelection_Click(object sender, EventArgs e)
+        {
+            textBox_Code.Text = textBox_Code.Text.Replace("$selected$", ""); // es soll immer nur ein $selected$ geben
+            textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition, "$selected$");
+        }
+
+
+        /// <summary>
+        /// This Button opens a settings menu
+        /// There it is possible to chnage toe author or Title (...)
+        /// Info: How to add snippets
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_settings_Click(object sender, EventArgs e)
+        {
+            
+            settingsForm.Visible = true;
+            settingsForm.Reload();
+            if(settingsForm.title.Length<1) // wenn noch kein titel zugewiesen, wird der derzeitige shortcut genommen
+            settingsForm.title = textBox_Shortcut.Text;
+        }
+
+        private void comboBox_kinds_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
 
+        private void button_Generate_Click(object sender, EventArgs e)
+        {
 
 
             // all types hier extra einfügen
@@ -176,7 +209,7 @@ namespace SnippedGenerator
 
             if (title.Length < 1) // falls kein Titel extra zugewiesen wurde, ist der Titel = shortcut
                 title = shortCut;
-            
+
 
 
             string typesLiteral = "";
@@ -231,44 +264,10 @@ namespace SnippedGenerator
 
 
         }
-
-        private void button_AddEnd_Click(object sender, EventArgs e)
-        {
-            textBox_Code.Text = textBox_Code.Text.Replace("$end$",""); // es soll immer nur ein $end$ geben
-            textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition,"$end$");
-        }
-
-        private void button_AddSelection_Click(object sender, EventArgs e)
-        {
-            textBox_Code.Text = textBox_Code.Text.Replace("$selected$", ""); // es soll immer nur ein $selected$ geben
-            textBox_Code.Text = textBox_Code.Text.Insert(currentCursorCodePosition, "$selected$");
-        }
-
-
-        /// <summary>
-        /// This Button opens a settings menu
-        /// There it is possible to chnage toe author or Title (...)
-        /// Info: How to add snippets
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button_settings_Click(object sender, EventArgs e)
-        {
-            
-            settingsForm.Visible = true;
-            settingsForm.Reload();
-            if(settingsForm.title.Length<1) // wenn noch kein titel zugewiesen, wird der derzeitige shortcut genommen
-            settingsForm.title = textBox_Shortcut.Text;
-        }
-
-        private void comboBox_kinds_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 
 
-    
+
 
     public class Types
     {
