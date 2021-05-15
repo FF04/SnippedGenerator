@@ -270,10 +270,28 @@ namespace SnippedGenerator
 
             string savePath = $@"C:\Users\{Environment.UserName}\Downloads\{title}.snippet";
 
+            //überprüfung falls das file schon existiert, wenn ja wird ein file mit dem namen angelegt, welches daneben einen int wert hat (immer höher als der bereits existierende)
+            for (int i = 1; i < int.MaxValue; i++)
+            {
+              
+
+                if (File.Exists(savePath))
+                {
+                    savePath = $@"C:\Users\{Environment.UserName}\Downloads\{title}({i}).snippet";
+                    if(i==int.MaxValue-1)
+                    {
+                        //chance is dast gleich 0 das man hier je rein kommt, aber trotzdem absicherung
+                        MessageBox.Show("es gibt bereits zu viele Files mit dem namen "+title);
+                        break;
+                    }
+                    continue;
+                }
 
             File.WriteAllText(savePath, snippedTemplate);
-
             Process.Start("explorer.exe", $@"C:\Users\{Environment.UserName}\Downloads"); // öffnen des ordners
+                break;
+            }
+
 
 
 
