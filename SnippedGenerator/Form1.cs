@@ -43,9 +43,6 @@ namespace SnippedGenerator
             VisibleTypeUI(false);
 
 
-            snippedTemplate = File.ReadAllText(SnippedTemplatePath);
-
-
 
 
 
@@ -200,6 +197,9 @@ namespace SnippedGenerator
 
         private void button_Generate_Click(object sender, EventArgs e)
         {
+
+
+            snippedTemplate = File.ReadAllText(SnippedTemplatePath);
 
 
             // all types hier extra einfügen
