@@ -268,7 +268,7 @@ namespace SnippedGenerator
 
 
 
-            string savePath = $@"C:\Users\{Environment.UserName}\Downloads\{shortCut}.snippet";
+            string savePath = $@"C:\Users\{Environment.UserName}\Downloads\{title}.snippet";
 
 
             File.WriteAllText(savePath, snippedTemplate);
