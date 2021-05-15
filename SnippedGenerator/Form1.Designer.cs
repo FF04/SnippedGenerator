@@ -91,6 +91,7 @@ namespace SnippedGenerator
             this.textBox_Shortcut.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.textBox_Shortcut.Size = new System.Drawing.Size(147, 29);
             this.textBox_Shortcut.TabIndex = 3;
+            this.textBox_Shortcut.TextChanged += new System.EventHandler(this.textBox_Shortcut_TextChanged);
             // 
             // textBox_Description
             // 

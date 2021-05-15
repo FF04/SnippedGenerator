@@ -56,5 +56,10 @@ namespace SnippedGenerator
         {
             title = textBox_title.Text;
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

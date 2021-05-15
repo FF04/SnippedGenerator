@@ -187,10 +187,10 @@ namespace SnippedGenerator
         private void button_settings_Click(object sender, EventArgs e)
         {
             
-            settingsForm.Visible = true;
-            settingsForm.Reload();
             if(settingsForm.title.Length<1) // wenn noch kein titel zugewiesen, wird der derzeitige shortcut genommen
             settingsForm.title = textBox_Shortcut.Text;
+            settingsForm.Reload();
+            settingsForm.Visible = true;
         }
 
         private void comboBox_kinds_SelectedIndexChanged(object sender, EventArgs e)
@@ -279,6 +279,11 @@ namespace SnippedGenerator
 
 
 
+
+        }
+
+        private void textBox_Shortcut_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
