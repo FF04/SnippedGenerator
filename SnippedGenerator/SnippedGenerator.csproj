@@ -6,6 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>Snippet_icon-icons.com_53754.ico</ApplicationIcon>
     <StartupObject>SnippedGenerator.Program</StartupObject>
+    <RootNamespace>SnippetGenerator</RootNamespace>
+    <AssemblyName>SnippetGenerator</AssemblyName>
   </PropertyGroup>
 
 </Project>

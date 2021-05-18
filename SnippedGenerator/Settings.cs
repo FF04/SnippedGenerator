@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SnippedGenerator
+namespace SnippetGenerator
 {
     public partial class Settings : Form
     {
@@ -58,6 +58,11 @@ namespace SnippedGenerator
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Settings_Load(object sender, EventArgs e)
         {
 
         }

@@ -1,5 +1,5 @@
 ﻿
-namespace SnippedGenerator
+namespace SnippetGenerator
 {
     partial class Settings
     {
@@ -121,6 +121,7 @@ namespace SnippedGenerator
             this.Name = "Settings";
             this.Text = "Settings";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Settings_FormClosing);
+            this.Load += new System.EventHandler(this.Settings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -11,14 +11,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SnippedGenerator
+namespace SnippetGenerator
 {
 
     
     public partial class Form1 : Form
     {
-        public const string SnippedTemplatePath = @"..\..\..\Snippet_template.txt";
-        public string snippedTemplate;
+        public const string SnippetTemplatePath = @"..\..\..\Snippet_template.txt";
+        public string snippetTemplate;
 
 
 
@@ -199,7 +199,7 @@ namespace SnippedGenerator
         {
 
 
-            snippedTemplate = File.ReadAllText(SnippedTemplatePath);
+            snippetTemplate = File.ReadAllText(SnippetTemplatePath);
 
 
             // all types hier extra einfügen
@@ -246,7 +246,7 @@ namespace SnippedGenerator
 
 
 
-            if (!code.Contains("$end$")) // $end$ ist immer dort wo der cursor nach dem das snipped eingefügt wurde steht
+            if (!code.Contains("$end$")) // $end$ ist immer dort wo der cursor nach dem das snippet eingefügt wurde steht
             {
                 code += "$end$";
             }
@@ -257,12 +257,12 @@ namespace SnippedGenerator
             // *4* Author
             // *5* <literal>  (nur die types nehmen welche auch im code vorkommen)
             // *6* Code
-            snippedTemplate = snippedTemplate.Replace("*1*", title);
-            snippedTemplate = snippedTemplate.Replace("*2*", shortCut);
-            snippedTemplate = snippedTemplate.Replace("*3*", Description);
-            snippedTemplate = snippedTemplate.Replace("*4*", Author);
-            snippedTemplate = snippedTemplate.Replace("*5*", typesLiteral);
-            snippedTemplate = snippedTemplate.Replace("*6*", code);
+            snippetTemplate = snippetTemplate.Replace("*1*", title);
+            snippetTemplate = snippetTemplate.Replace("*2*", shortCut);
+            snippetTemplate = snippetTemplate.Replace("*3*", Description);
+            snippetTemplate = snippetTemplate.Replace("*4*", Author);
+            snippetTemplate = snippetTemplate.Replace("*5*", typesLiteral);
+            snippetTemplate = snippetTemplate.Replace("*6*", code);
 
 
 
@@ -287,7 +287,7 @@ namespace SnippedGenerator
                     continue;
                 }
 
-            File.WriteAllText(savePath, snippedTemplate);
+            File.WriteAllText(savePath, snippetTemplate);
             Process.Start("explorer.exe", $@"C:\Users\{Environment.UserName}\Downloads"); // öffnen des ordners
                 break;
             }

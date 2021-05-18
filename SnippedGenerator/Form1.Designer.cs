@@ -1,5 +1,5 @@
 ﻿
-namespace SnippedGenerator
+namespace SnippetGenerator
 {
     partial class Form1
     {
@@ -99,7 +99,7 @@ namespace SnippedGenerator
             this.textBox_Description.Location = new System.Drawing.Point(41, 144);
             this.textBox_Description.Multiline = true;
             this.textBox_Description.Name = "textBox_Description";
-            this.textBox_Description.PlaceholderText = "A snipped for Console.ReadLine()";
+            this.textBox_Description.PlaceholderText = "A snippet  for Console.ReadLine()";
             this.textBox_Description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox_Description.Size = new System.Drawing.Size(369, 77);
             this.textBox_Description.TabIndex = 4;
@@ -265,7 +265,7 @@ namespace SnippedGenerator
             this.button_Generate.Name = "button_Generate";
             this.button_Generate.Size = new System.Drawing.Size(200, 64);
             this.button_Generate.TabIndex = 19;
-            this.button_Generate.Text = "Generate snipped";
+            this.button_Generate.Text = "Generate snippet";
             this.button_Generate.UseVisualStyleBackColor = false;
             this.button_Generate.Click += new System.EventHandler(this.button_Generate_Click);
             // 
@@ -294,7 +294,7 @@ namespace SnippedGenerator
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Snipped Generator";
+            this.Text = "Snippet Generator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

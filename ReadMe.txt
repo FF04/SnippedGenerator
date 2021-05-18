@@ -1,0 +1,3 @@
+SnippedGenerator (wrong spelled)
+
+-> Snippet
